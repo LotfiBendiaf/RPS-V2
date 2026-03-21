@@ -9,35 +9,88 @@ export default function ContactForm() {
   const [state, formAction, isPending] = useActionState(sendContact, initialState);
 
   return (
-    <form action={formAction} id="contact-form" className="slide-in from-left">
-      <h2 className="bold-text">Nous contacter ?</h2>
+    <form
+      action={formAction}
+      className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md"
+    >
+      <h2 className="text-2xl text-navy mb-1">Nous contacter</h2>
+      <p className="text-slate-500 text-sm mb-7">
+        Remplissez le formulaire et nous vous répondrons rapidement.
+      </p>
 
       {state.success && (
-        <p style={{ color: "#4caf50", marginBottom: "1rem" }}>
+        <div className="bg-green-50 border border-green-200 text-green-700 text-sm px-4 py-3 rounded-lg mb-6">
           ✓ Message envoyé avec succès ! Nous vous répondrons rapidement.
-        </p>
+        </div>
       )}
       {state.error && (
-        <p style={{ color: "#f44336", marginBottom: "1rem" }}>
+        <div className="bg-red-50 border border-red-200 text-red-600 text-sm px-4 py-3 rounded-lg mb-6">
           {state.error}
-        </p>
+        </div>
       )}
 
-      <label htmlFor="name">Nom</label>
-      <input id="name" className="input-field" required type="text" name="nom" />
+      <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="name" className="text-sm font-medium text-slate-700">
+            Nom
+          </label>
+          <input
+            id="name"
+            required
+            type="text"
+            name="nom"
+            className="border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition"
+          />
+        </div>
 
-      <label htmlFor="subject">Sujet</label>
-      <input id="subject" className="input-field" required type="text" name="sujet" placeholder="Exemple : Faire un devis" />
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="subject" className="text-sm font-medium text-slate-700">
+            Sujet
+          </label>
+          <input
+            id="subject"
+            required
+            type="text"
+            name="sujet"
+            placeholder="Exemple : Faire un devis"
+            className="border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition"
+          />
+        </div>
 
-      <label htmlFor="email">E-Mail</label>
-      <input id="email" className="input-field" required type="email" name="email" />
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="email" className="text-sm font-medium text-slate-700">
+            E-Mail
+          </label>
+          <input
+            id="email"
+            required
+            type="email"
+            name="email"
+            className="border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition"
+          />
+        </div>
 
-      <label htmlFor="message">Message</label>
-      <textarea id="message" className="input-field" required name="message" />
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="message" className="text-sm font-medium text-slate-700">
+            Message
+          </label>
+          <textarea
+            id="message"
+            required
+            name="message"
+            rows={5}
+            className="border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition resize-none"
+          />
+        </div>
 
-      <button className="btn" id="submit-btn" type="submit" disabled={isPending}>
-        {isPending ? "Envoi en cours..." : "Envoyer"}
-      </button>
+        <button
+          type="submit"
+          disabled={isPending}
+          className="bg-amber-500 hover:bg-amber-600 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+        >
+          {isPending ? "Envoi en cours…" : "Envoyer le message"}
+        </button>
+      </div>
     </form>
   );
 }

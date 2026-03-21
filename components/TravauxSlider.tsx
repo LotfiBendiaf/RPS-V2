@@ -52,8 +52,22 @@ export default function TravauxSlider() {
         </div>
       ))}
 
-      <a aria-label="Previous" className="prev" onClick={() => window.plusSlides?.(-1)}>&#10094;</a>
-      <a aria-label="Next" className="next" onClick={() => window.plusSlides?.(1)}>&#10095;</a>
+      <button
+        type="button"
+        aria-label="Previous"
+        className="prev"
+        onClick={() => window.plusSlides?.(-1)}
+      >
+        &#10094;
+      </button>
+      <button
+        type="button"
+        aria-label="Next"
+        className="next"
+        onClick={() => window.plusSlides?.(1)}
+      >
+        &#10095;
+      </button>
 
       <div className="caption-container">
         <p id="caption" />

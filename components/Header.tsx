@@ -2,79 +2,120 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { Home, Building2, Users, Phone } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, Home, Building2, Users, Phone, Wrench, ArrowRight } from "lucide-react";
+
+const navLinks = [
+  { href: "/", label: "Accueil", Icon: Home },
+  { href: "/#services", label: "Services", Icon: Wrench },
+  { href: "/travaux", label: "Nos travaux", Icon: Building2 },
+  { href: "/apropos", label: "Qui sommes-nous ?", Icon: Users },
+];
+
+const mobileLinks = [
+  { href: "/#services", label: "Nos services", Icon: Home },
+  { href: "/travaux", label: "Nos travaux", Icon: Building2 },
+  { href: "/apropos", label: "Qui sommes-nous ?", Icon: Users },
+];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      setHidden(y > lastY.current && y > 80);
+      lastY.current = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header id="header">
-      <div className="logo-header">
-        <Link aria-label="Page principale de RPS" href="/">
+    <div className={`fixed top-4 left-0 right-0 z-50 px-4 transition-transform duration-300 ${hidden ? "-translate-y-24" : "translate-y-0"}`}>
+    <header className="max-w-7xl mx-auto rounded-3xl bg-white/90 backdrop-blur-md shadow-lg">
+      <div className="mx-auto px-6 h-16 flex items-center justify-between gap-8">
+        {/* Logo */}
+        <Link href="/" aria-label="RPS — Accueil" className="shrink-0">
           <Image
-            className="main-icon"
-            src="/Icons/RPS-Logo.png"
+            src="/rps-logo-main.svg"
             alt="Logo RPS"
-            width={120}
-            height={120}
+            width={72}
+            height={72}
+            className="w-auto h-12"
           />
         </Link>
-      </div>
 
-      <ul className="navbar">
-        <li className="active">
-          <Link aria-label="Page principale de RPS" className="link" href="/">Accueil</Link>
-        </li>
-        <li>
-          <Link aria-label="Services de RPS" className="link" href="/#services">Services</Link>
-        </li>
-        <li>
-          <Link aria-label="Exploration des travaux et chantiers" className="link" href="/travaux">Nos travaux</Link>
-        </li>
-        <li>
-          <Link aria-label="Page a propos" className="link" href="/apropos">Qui sommes nous ?</Link>
-        </li>
-      </ul>
-
-      <div>
-        <Link aria-label="Contactez nous" href="/contact">
-          <button className="btn">Nous contacter</button>
-        </Link>
-      </div>
-
-      <div
-        className={`menu-btn${menuOpen ? " open" : ""}`}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <div className="menu-btn__burger" />
-      </div>
-
-      <div className={`menu${menuOpen ? " open" : " hidden"}`}>
-        <ul>
-          <li>
-            <Home size={20} className="mini-icon" />
-            <Link aria-label="Exploration de nos services" className="link" href="/#services">Nos services</Link>
-          </li>
-          <li>
-            <Building2 size={20} className="mini-icon" />
-            <Link aria-label="Exploration des travaux et chantiers" className="link" href="/travaux">Nos travaux</Link>
-          </li>
-          <li>
-            <Users size={20} className="mini-icon" />
-            <Link aria-label="Page a propos" className="link" href="/apropos">Qui sommes-nous ?</Link>
-          </li>
-          <li style={{ borderBottom: "2px solid var(--mainColor)" }} />
-          <li>
-            <Link aria-label="Contactez nous" href="/contact">
-              <button className="btn">
-                <Phone size={16} />
-                Nous contacter
-              </button>
+        {/* Desktop nav */}
+        <nav aria-label="Navigation principale" className="hidden md:flex items-center gap-7">
+          {navLinks.map(({ href, label, Icon }) => (
+            <Link
+              key={href}
+              href={href}
+              aria-label={label}
+              className="flex items-center gap-1.5 text-sm font-medium text-slate-700 hover:text-amber-600 transition-colors"
+            >
+              <Icon size={15} className="text-amber-500" />
+              {label}
             </Link>
-          </li>
-        </ul>
+          ))}
+        </nav>
+
+        {/* CTA + burger */}
+        <div className="flex items-center gap-3 shrink-0">
+          <Link
+            href="/contact"
+            aria-label="Nous contacter"
+            className="hidden md:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white text-sm px-5 py-2.5 rounded transition-colors uppercase"
+          >
+            Nous contacter
+            <ArrowRight size={16} />
+          </Link>
+          <button
+            type="button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            className="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div
+          id="mobile-navigation"
+          className="md:hidden bg-white border-t border-slate-100 px-6 py-4 flex flex-col gap-1"
+        >
+          {mobileLinks.map(({ href, label, Icon }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-3 text-sm font-medium text-slate-700 hover:text-amber-600 py-3 px-2 rounded-lg hover:bg-slate-50 transition-colors"
+            >
+              <Icon size={17} className="text-amber-500" />
+              {label}
+            </Link>
+          ))}
+          <div className="border-t border-slate-100 pt-4 mt-2">
+            <Link
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors w-full uppercase"
+            >
+              Nous contacter
+              <Phone size={16} />
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
+    </div>
   );
 }

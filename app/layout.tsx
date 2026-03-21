@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
-import { Abril_Fatface, Poppins, Montserrat } from "next/font/google";
-import Script from "next/script";
+import { Poppins, Montserrat } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
-
-const abrilFatface = Abril_Fatface({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const poppins = Poppins({
   weight: ["400", "500", "600"],
@@ -47,17 +40,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${poppins.variable} ${montserrat.variable} ${abrilFatface.className}`}>
-      <head>
-        <link rel="stylesheet" href="/Styles/header.css" />
-        <link rel="stylesheet" href="/Styles/main.css" />
-        <link rel="stylesheet" href="/Styles/footer.css" />
-      </head>
+    <html
+      lang="fr"
+      className={`${poppins.variable} ${montserrat.variable}`}
+    >
       <body>
         <Header />
         {children}
         <Footer />
-        <Script src="/Scripts/script.js" strategy="afterInteractive" />
       </body>
     </html>
   );
