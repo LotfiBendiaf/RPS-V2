@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import CertifiedBadge from "@/components/CertifiedBadge";
+import Logo from "@/components/Logo";
 
 export const metadata: Metadata = { title: "Qui sommes-nous ?" };
 
@@ -35,6 +37,8 @@ export default function AproposPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Text */}
             <div>
+                            <Logo />
+
               <p className="text-amber-500 text-sm font-semibold uppercase tracking-widest mb-3">
                 Notre histoire
               </p>
@@ -70,9 +74,9 @@ export default function AproposPage() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm mt-8"
+                className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white uppercase px-6 py-3 rounded transition-colors text-sm mt-8"
               >
-                Contactez-nous →
+                Contactez-nous <ArrowRight size={16} />
               </Link>
             </div>
 
@@ -113,6 +117,7 @@ export default function AproposPage() {
                   ))}
                 </div>
               </div>
+              <CertifiedBadge />
             </div>
           </div>
         </div>

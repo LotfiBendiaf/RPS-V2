@@ -52,16 +52,18 @@ export default function AvantagesSection() {
               }`}
             />
           </button>
-          {open === i && (
-            <div
-              id={`avantage-panel-${i}`}
-              role="region"
-              aria-labelledby={`avantage-trigger-${i}`}
-              className="px-5 pt-3 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100"
-            >
+          <div
+            id={`avantage-panel-${i}`}
+            role="region"
+            aria-labelledby={`avantage-trigger-${i}`}
+            className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              open === i ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
+            <div className="px-5 pt-3 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
               {item.text}
             </div>
-          )}
+          </div>
         </div>
       ))}
     </div>

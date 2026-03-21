@@ -4,7 +4,9 @@ import { Star } from "lucide-react";
 
 export default function ReputationSection() {
   return (
-    <section className="py-20 bg-navy">
+    <section className="relative py-20 bg-navy">
+            <Image src={"/rps-icon-bg.svg"} alt="RPS Logo Background" fill className="object-cover opacity-10" />
+      
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -20,13 +22,13 @@ export default function ReputationSection() {
               Nous proposons des options de financement souples et une garantie sur tous
               nos services.
             </p>
-            <div className="flex flex-wrap gap-4 items-center">
-              <Link
-                href="/travaux"
-                className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
-              >
+            <div>
+
+
+              <Link href="/travaux" className="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 text-white rounded shadow-md hover:bg-primary-600 transition-colors duration-300">
                 Explorez notre savoir-faire
               </Link>
+              
               <div className="flex items-center gap-2 text-white">
                 <div className="flex gap-0.5">
                   {[1, 2, 3, 4, 5].map((s) => (

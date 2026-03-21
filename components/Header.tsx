@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Home, Building2, Users, Phone, Wrench, ArrowRight } from "lucide-react";
 
@@ -38,15 +38,7 @@ export default function Header() {
     <header className="max-w-7xl mx-auto rounded-3xl bg-white/90 backdrop-blur-md shadow-lg">
       <div className="mx-auto px-6 h-16 flex items-center justify-between gap-8">
         {/* Logo */}
-        <Link href="/" aria-label="RPS — Accueil" className="shrink-0">
-          <Image
-            src="/rps-logo-main.svg"
-            alt="Logo RPS"
-            width={72}
-            height={72}
-            className="w-auto h-12"
-          />
-        </Link>
+        <Logo />
 
         {/* Desktop nav */}
         <nav aria-label="Navigation principale" className="hidden md:flex items-center gap-7">

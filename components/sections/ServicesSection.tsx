@@ -1,13 +1,39 @@
 import Image from "next/image";
-import { MapPin, Globe, Star } from "lucide-react";
 
-const services = [
-  { id: "plumber",   name: "Plomberie",         price: "À estimer",              time: "Prestation",    material: "Matériel compris" },
-  { id: "soil",      name: "Maçonnerie",         price: "À partir de 15€ / m²",   time: "1h / 10 m²",    material: "Matériaux non compris" },
-  { id: "electric",  name: "Électricité",        price: "À estimer",              time: "Selon travaux", material: "Matériaux compris" },
-  { id: "carpenter", name: "Menuiserie",         price: "À estimer",              time: "Selon travaux", material: "Matériaux compris" },
-  { id: "painting",  name: "Peinture",           price: "~11€ / m²",              time: "1h / 10 m²",    material: "Matériaux non compris" },
-  { id: "isolation", name: "Doublage Isolation", price: "À partir de ~50€ / m²", time: "100€ / 15 m²",  material: "Matériaux compris" },
+const categories = [
+  {
+    id: "painting",
+    name: "Murs & Sols",
+    items: [
+      "Peintures murales et décoratives",
+      "Revêtements muraux",
+      "Plâtrerie & cloisons",
+      "Faux plafonds",
+      "Papiers peints",
+      "Revêtements de sols souples",
+      "Carrelage",
+    ],
+  },
+  {
+    id: "ext",
+    name: "Façades",
+    items: [
+      "Ravalement de façade",
+      "Peintures extérieures",
+      "Isolation thermique par l'extérieur",
+      "Imperméabilisation",
+    ],
+  },
+  {
+    id: "carpenter",
+    name: "Aménagement",
+    items: [
+      "Plâtrerie & cloisons",
+      "Faux plafonds",
+      "Électricité",
+      "Plomberie",
+    ],
+  },
 ];
 
 export default function ServicesSection() {
@@ -18,44 +44,51 @@ export default function ServicesSection() {
           <p className="text-primary-500 text-sm font-semibold uppercase tracking-widest mb-3">
             Ce que nous offrons
           </p>
-          <h2 className="text-3xl sm:text-4xl text-navy">Services présentés</h2>
+          <h2 className="text-3xl sm:text-4xl text-navy">Nos domaines d&apos;intervention</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s) => (
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {categories.map((cat) => (
             <div
-              key={s.id}
-              className="relative h-72 rounded-2xl overflow-hidden group cursor-pointer"
+              key={cat.id}
+              className="relative h-96 rounded-2xl overflow-hidden group cursor-pointer shadow-md"
             >
+              {/* Background image */}
               <Image
-                src={`/Images/${s.id}.jpg`}
-                alt={s.name}
+                src={`/Images/${cat.id}.jpg`}
+                alt={cat.name}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-transparent" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <h3 className="text-white font-semibold text-lg mb-1">{s.name}</h3>
-                <p className="text-primary-400 text-sm font-medium mb-3">{s.price}</p>
+              {/* Default overlay — darkens bottom */}
+              <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/25 to-transparent transition-opacity duration-400 group-hover:opacity-0" />
 
-                {/* Hover reveal */}
-                <div className="max-h-24 sm:max-h-0 sm:group-hover:max-h-24 overflow-hidden transition-all duration-300">
-                  <div className="flex flex-col gap-1.5 text-warm-300 text-xs pt-3 border-t border-white/20">
-                    <div className="flex items-center gap-2">
-                      <MapPin size={11} className="text-primary-400" />
-                      <span>3 rue Général Micheler, Reims</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Globe size={11} className="text-primary-400" />
-                      <span>{s.time}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Star size={11} className="text-primary-400" />
-                      <span>{s.material}</span>
-                    </div>
-                  </div>
-                </div>
+              {/* Hover overlay — full dark cover */}
+              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+
+              {/* Category name — slides up on hover */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-0 group-hover:-translate-y-4 transition-transform duration-400">
+                <h3 className="text-white font-bold text-2xl tracking-wide drop-shadow">
+                  {cat.name}
+                </h3>
+                <span className="block mt-1 w-8 h-0.5 bg-primary-400 group-hover:w-0 transition-all duration-300" />
+              </div>
+
+              {/* Services list — revealed on hover */}
+              <div className="absolute inset-0 flex flex-col justify-center px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-400 delay-100">
+                <ul className="flex flex-col gap-3">
+                  {cat.items.map((item, i) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 text-white text-sm"
+                      style={{ transitionDelay: `${i * 40 + 150}ms` }}
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
