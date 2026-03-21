@@ -10,9 +10,9 @@ export default function ProjectsPreviewSection() {
 
   return (
     <section className="relative py-20 px-6 bg-white">
-            <Image src={"/rps-icon-bg.svg"} alt="RPS Logo Background" fill className="object-cover opacity-30" />
+            <Image src={"/rps-icon-bg.svg"} alt="RPS Logo Background" fill className="object-cover opacity-30 z-0" />
 
-      <div className="max-w-7xl mx-auto">
+      <div className="relative z-1 max-w-7xl mx-auto">
         {/* Section header */}
         <div className="mb-16">
           <p className="text-primary-500 text-xs font-semibold uppercase tracking-widest mb-3">
