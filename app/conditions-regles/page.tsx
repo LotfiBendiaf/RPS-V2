@@ -26,7 +26,7 @@ export default function ConditionsPage() {
   return (
     <main>
       {/* Header */}
-      <div className="bg-navy py-16 px-6">
+      <div className="bg-navy py-32 px-6">
         <div className="max-w-4xl mx-auto">
           <p className="text-amber-400 text-xs font-semibold uppercase tracking-widest mb-3">
             Légal

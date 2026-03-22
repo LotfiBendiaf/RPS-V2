@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Poppins, Montserrat, Geist } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -51,6 +53,8 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <WhatsAppButton />
+        <CookieConsent />
       </body>
     </html>
   );

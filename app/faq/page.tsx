@@ -43,7 +43,7 @@ export default function FAQPage() {
   return (
     <main>
       {/* Header band */}
-      <div className="bg-navy py-16 px-6">
+      <div className="bg-navy py-32 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-amber-500/20 mb-5">
             <MessageCircleQuestion size={24} className="text-amber-400" />
