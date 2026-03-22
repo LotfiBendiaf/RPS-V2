@@ -48,7 +48,7 @@ export default function Header() {
               key={href}
               href={href}
               aria-label={label}
-              className="flex items-center gap-1.5 text-sm font-medium text-slate-700 hover:text-amber-600 transition-colors"
+              className="flex items-center gap-1.5 text-sm text-slate-700 hover:text-amber-600 transition-colors"
             >
               <Icon size={15} className="text-amber-500" />
               {label}

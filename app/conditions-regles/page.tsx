@@ -3,23 +3,66 @@ import type { Metadata } from "next";
 export const metadata: Metadata = { title: "Conditions et Règles" };
 
 const sections = [
-  { title: "1. Conditions d'utilisation", text: "L'utilisation de notre site est soumise à l'acceptation des présentes conditions. Vous devez avoir au moins 18 ans pour utiliser nos services." },
-  { title: "2. Services proposés", text: "Nos services de rénovation incluent la rénovation de cuisines, salles de bains, et la peinture intérieure et extérieure. Consultez nos descriptions détaillées pour plus d'informations." },
-  { title: "3. Tarification et Devis", text: "Les prix indiqués sur le site sont des estimations. Pour un devis précis, veuillez remplir notre formulaire de demande en ligne." },
-  { title: "4. Conditions de paiement", text: "Nous acceptons les paiements par carte de crédit et virement bancaire. Un dépôt de 30 % est requis pour confirmer votre réservation." },
-  { title: "5. Planification et Délais", text: "Nos services de rénovation incluent la rénovation de cuisines, salles de bains, et la peinture intérieure et extérieure. Consultez nos descriptions détaillées pour plus d'informations." },
-  { title: "6. Annulation et Report", text: "Les annulations doivent être signalées 72 heures avant la date prévue. Des frais d'annulation de 15 % peuvent s'appliquer." },
-  { title: "7. Accès au Site et Sécurité", text: "L'accès au site de construction est strictement contrôlé. Les visiteurs doivent porter un équipement de sécurité." },
-  { title: "8. Propriété Intellectuelle", text: "Tous les plans et conceptions créés par notre équipe demeurent notre propriété intellectuelle, sauf accord contraire." },
-  { title: "9. Matériaux et Normes de Qualité", text: "Nous utilisons des matériaux de qualité supérieure conformes aux normes en vigueur. Nous privilégions les options respectueuses de l'environnement." },
-  { title: "10. Politique de Confidentialité", text: "Vos informations personnelles sont utilisées uniquement pour le traitement des commandes et ne seront jamais vendues à des tiers." },
-  { title: "11. Assurance et Responsabilité", text: "Notre entreprise est couverte par une assurance responsabilité civile. Le client est responsable des dommages causés par sa négligence." },
-  { title: "12. Garanties et Engagements", text: "Nous offrons une garantie d'un an sur tous nos travaux de rénovation. Des conditions s'appliquent, veuillez consulter notre page de garantie pour plus de détails." },
-  { title: "13. Responsabilités du Client", text: "Le client est responsable de préparer le site avant le début des travaux, y compris le déplacement d'objets fragiles." },
-  { title: "14. Résolution des Litiges", text: "En cas de litige, les parties s'engagent à tenter une médiation avant d'entamer des procédures judiciaires. La loi française s'applique." },
-  { title: "15. Retours d'Expérience et Témoignages", text: "Les clients fournissant des témoignages bénéficieront d'une réduction de 10 % sur leur prochain projet. Consultez notre page de témoignages pour plus d'informations." },
-  { title: "16. Code de Conduite", text: "Notre équipe s'engage à maintenir un haut niveau de professionnalisme. Tout comportement contraire à notre code de conduite peut entraîner des sanctions." },
-  { title: "17. Procédures d'Urgence", text: "En cas d'urgence sur le site, suivez nos procédures d'évacuation d'urgence affichées à des endroits stratégiques." },
+  {
+    title: "1. Présentation de la société",
+    text: "Renovation Peinture Service (RPS) est une société dont le siège social est situé au 3, rue Général Micheler, 51100 Reims. Tél. : 06 09 23 24 99 — Site : rps-reims.com. RPS est qualifiée QUALIBAT et reconnue Grenelle de l'Environnement. Les présentes conditions générales régissent l'ensemble des prestations fournies par RPS à ses clients.",
+  },
+  {
+    title: "2. Champ d'application",
+    text: "Les présentes conditions générales s'appliquent à toutes les prestations de peinture industrielle, de revêtements spéciaux et de finition/aménagement du bâtiment réalisées par RPS, qu'elles soient destinées à des particuliers, à des bailleurs sociaux, à des maîtres d'ouvrage publics ou à des industriels, sur l'ensemble du territoire national.",
+  },
+  {
+    title: "3. Devis et formation du contrat",
+    text: "Toute intervention est précédée d'un devis écrit, établi gratuitement à la suite d'une visite ou d'un échange avec notre chargé d'affaires. Le devis est valable 30 jours à compter de sa date d'émission. Le contrat est formé par la signature du devis accompagnée du versement d'un acompte. Toute modification en cours de chantier fait l'objet d'un avenant écrit signé des deux parties.",
+  },
+  {
+    title: "4. Conditions de paiement",
+    text: "Un acompte de 30 % du montant TTC est exigé à la signature du devis pour confirmer le démarrage des travaux. Le solde est dû à la réception des travaux, constatée par un procès-verbal signé. Les règlements s'effectuent par virement bancaire ou chèque à l'ordre de RPS. Tout retard de paiement entraîne, de plein droit et sans mise en demeure préalable, des pénalités de retard calculées au taux légal majoré de 5 points, ainsi qu'une indemnité forfaitaire de recouvrement de 40 €.",
+  },
+  {
+    title: "5. Planification et délais d'exécution",
+    text: "Les délais d'exécution sont fixés d'un commun accord lors de la signature du devis et mentionnés dans le document contractuel. Ils sont donnés à titre indicatif et peuvent être prolongés en cas de force majeure (intempéries, grèves, retard d'approvisionnement) ou de modification du cahier des charges par le client. RPS s'engage à informer le client de tout retard prévisible dans les meilleurs délais.",
+  },
+  {
+    title: "6. Accès au chantier et obligations du client",
+    text: "Le client s'engage à garantir un accès libre et sécurisé au chantier aux heures convenues et à avoir réalisé en amont les travaux préparatoires nécessaires (dépose de mobilier, coupure des réseaux concernés si requis). Tout accès impossible ou retard imputable au client sera facturé au titre des heures d'immobilisation des équipes.",
+  },
+  {
+    title: "7. Sécurité et prévention",
+    text: "RPS met en œuvre une politique Sécurité & Environnement rigoureuse sur l'ensemble de ses chantiers, conformément au Document Unique d'Évaluation des Risques Professionnels (DUERP) et aux dispositions du Code du travail. Nos compagnons sont formés et habilités, notamment pour la prévention du risque amiante (formation SS4 — R4412-144). Toute personne extérieure accédant au chantier doit respecter les consignes de sécurité en vigueur.",
+  },
+  {
+    title: "8. Matériaux et normes environnementales",
+    text: "RPS s'engage à utiliser des matériaux conformes aux normes françaises et européennes en vigueur. Plus de 80 % de nos peintures sont en phase aqueuse ; nous privilégions les produits certifiés NF Environnement ou Ecolabel afin de réduire les émissions de Composés Organiques Volatils (COV). Les fiches techniques et fiches de données de sécurité des produits utilisés sont disponibles sur demande.",
+  },
+  {
+    title: "9. Assurance et responsabilité civile",
+    text: "RPS est couvert par une assurance Responsabilité Civile Professionnelle et Décennale souscrite auprès d'un assureur agréé. Les attestations d'assurance sont remises au client sur simple demande. La responsabilité de RPS est limitée aux seuls dommages directs résultant d'une faute avérée dans l'exécution des prestations contractuelles.",
+  },
+  {
+    title: "10. Garanties",
+    text: "Les travaux réalisés par RPS bénéficient de la garantie de parfait achèvement (1 an à compter de la réception), de la garantie biennale pour les équipements dissociables (2 ans) et, le cas échéant, de la garantie décennale pour les ouvrages relevant de l'article 1792 du Code civil. Ces garanties s'appliquent sous réserve d'une utilisation normale et conforme aux prescriptions communiquées par RPS.",
+  },
+  {
+    title: "11. Propriété intellectuelle",
+    text: "Les études, plans, métrés et documents techniques produits par RPS dans le cadre de l'établissement d'un devis ou d'un projet restent la propriété exclusive de RPS jusqu'au règlement intégral de la prestation correspondante. Leur reproduction ou transmission à des tiers sans accord écrit est interdite.",
+  },
+  {
+    title: "12. Annulation et résiliation",
+    text: "Toute annulation par le client après signature du devis doit être notifiée par écrit. Si les travaux n'ont pas débuté, l'acompte versé est conservé à titre d'indemnité d'immobilisation. Si les travaux ont débuté, le client doit régler les prestations réalisées jusqu'à la date de résiliation, majorées des coûts de remise en état éventuels. RPS se réserve le droit de suspendre ou résilier le chantier en cas de non-paiement après mise en demeure restée sans effet.",
+  },
+  {
+    title: "13. Politique de confidentialité et données personnelles",
+    text: "Les données personnelles collectées via le site rps-reims.com (nom, prénom, e-mail, téléphone, message) sont utilisées exclusivement pour le traitement des demandes de contact et de devis. Elles ne sont ni revendues ni transmises à des tiers sans consentement. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en écrivant à l'adresse du siège social.",
+  },
+  {
+    title: "14. Résolution des litiges",
+    text: "En cas de différend, les parties s'engagent à rechercher une solution amiable dans un délai de 30 jours à compter de la notification du litige. À défaut d'accord, le litige sera soumis à la médiation de la consommation ou, pour les marchés professionnels, au Tribunal de Commerce de Reims, auquel les parties attribuent expressément compétence. Le droit français est applicable.",
+  },
+  {
+    title: "15. Dispositions diverses",
+    text: "Si l'une des clauses des présentes conditions est déclarée nulle ou inapplicable, les autres clauses demeurent en vigueur. RPS se réserve le droit de modifier ces conditions à tout moment ; la version en vigueur est celle publiée sur le site à la date de la commande.",
+  },
 ];
 
 export default function ConditionsPage() {
@@ -33,7 +76,7 @@ export default function ConditionsPage() {
           </p>
           <h1 className="text-4xl sm:text-5xl text-white mb-2">Conditions et Règles</h1>
           <p className="text-slate-400 text-sm max-w-2xl">
-            Informations essentielles sur nos conditions d&apos;utilisation, engagements et responsabilités.
+            Conditions générales de vente et d&apos;intervention applicables à l&apos;ensemble des prestations réalisées par RPS — Renovation Peinture Service, 3 rue Général Micheler, 51100 Reims.
           </p>
         </div>
       </div>

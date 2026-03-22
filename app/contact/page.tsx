@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import { Phone, Building2, Mail, Clock } from "lucide-react";
+import Image from "next/image";
 
 export const metadata: Metadata = { title: "Contact" };
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-navy pt-8 overflow-x-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+    <main className="min-h-screen flex items-center bg-navy pt-20 overflow-x-hidden">
+            <Image src={"/rps-icon-bg.svg"} alt="RPS Logo Background" fill className="object-cover opacity-5 z-0" />
+      <div className="max-w-7xl z-1 mx-auto px-4 sm:px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Left: info */}
           <div className="text-white">
