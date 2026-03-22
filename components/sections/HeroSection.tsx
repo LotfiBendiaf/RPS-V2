@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowRight, FileInput, Medal, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
+import ScrollReveal from "../ScrollReveal";
 
 const stats = [
   { value: "50+",  label: "Professionnels qualifiés" },
@@ -54,6 +55,7 @@ export default function HeroSection() {
       <div className="inset-0 absolute bg-linear-to-br from-black to-transparent"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 w-full h-[110vh] md:h-screen flex items-center">
+<ScrollReveal direction="left">
         <div className="max-w-3xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary-500/20 border border-primary-400/30 text-primary-300 text-xs font-medium px-3 py-1.5 rounded-full mb-6">
@@ -101,6 +103,7 @@ export default function HeroSection() {
             ))}
           </div>
         </div>
+        </ScrollReveal>
 
         {/* Floating badge */}
         <div className="absolute bottom-12 right-12 hidden lg:block">

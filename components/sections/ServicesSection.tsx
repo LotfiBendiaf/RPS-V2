@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const categories = [
   {
@@ -67,23 +68,28 @@ export default function ServicesSection() {
   return (
     <section id="services" className="py-10 bg-secondary-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <p className="text-primary-500 text-sm font-semibold uppercase tracking-widest mb-3">
-            Ce que nous offrons
-          </p>
-          <h2 className="text-2xl sm:text-4xl text-navy">Nos domaines d&apos;intervention</h2>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="text-center mb-12">
+            <p className="text-primary-500 text-sm font-semibold uppercase tracking-widest mb-3">
+              Ce que nous offrons
+            </p>
+            <h2 className="text-2xl sm:text-4xl text-navy">Nos domaines d&apos;intervention</h2>
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-6 gap-6">
           {categories.map((cat, idx) => {
             const isOpen = openId === cat.id;
             return (
-              <div
+              <ScrollReveal
                 key={cat.id}
+                direction="up"
+                delay={idx * 100}
+                className={`col-span-2${idx === 3 ? " sm:col-start-2" : ""}`}
+              >
+              <div
                 onClick={() => setOpenId(isOpen ? null : cat.id)}
-                className={`relative h-96 rounded-2xl col-span-2 overflow-hidden group cursor-pointer shadow-md sm:col-span-2${
-                  idx === 3 ? " sm:col-start-2" : ""
-                }`}
+                className="relative h-96 rounded-2xl overflow-hidden group cursor-pointer shadow-md w-full"
               >
                 {/* Background image */}
                 <Image
@@ -123,6 +129,7 @@ export default function ServicesSection() {
                   </ul>
                 </div>
               </div>
+              </ScrollReveal>
             );
           })}
         </div>

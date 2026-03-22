@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import CertifiedBadge from "@/components/CertifiedBadge";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const stats = [
   { value: "50+",  label: "Professionnels qualifiés" },
@@ -21,14 +22,17 @@ export default function WhyUsSection() {
       <Image src={"/rps-icon-bg.svg"} alt="RPS Logo Background" fill className="object-cover opacity-30 z-0" />
       <div className="relative z-1 max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="relative rounded-2xl overflow-hidden h-110">
-            <Image
-              src="/Images/rps-image.jpg"
-              alt="Équipe RPS en travaux"
-              fill
-              className="object-cover"
-            />
-          </div>
+          <ScrollReveal direction="left">
+            <div className="relative rounded-2xl overflow-hidden h-110">
+              <Image
+                src="/Images/rps-image.jpg"
+                alt="Équipe RPS en travaux"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </ScrollReveal>
+          <ScrollReveal direction="right">
           <div>
             <p className="text-primary-500 text-sm font-semibold uppercase tracking-widest mb-3">
               Notre expertise
@@ -63,6 +67,7 @@ export default function WhyUsSection() {
               ))}
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </div>
 

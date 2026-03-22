@@ -4,6 +4,7 @@ import Image from "next/image";
 import ProjectImageGallery from "./ProjectImageGallery";
 import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function ProjectsPreviewSection() {
   const projects = PROJECT_META.map((p) => {
@@ -38,25 +39,26 @@ export default function ProjectsPreviewSection() {
               }`}
             >
               {/* Text side */}
-              <div>
-                <span className="text-primary-500 text-xs font-semibold uppercase tracking-widest">
-                  {project.category}
-                </span>
-                <h3 className="text-2xl text-navy mt-2 mb-4">{project.title}</h3>
-                <p className="text-slate-500 leading-relaxed mb-8">{project.description}</p>
-                <Link
-                  href="/travaux"
-                >
-                  <Button variant={"primary"}>
-
-                  Voir toutes les photos
-                  <ArrowRight size={16} className="ml-2" />
-                  </Button>
-                </Link>
-              </div>
+              <ScrollReveal direction={i % 2 === 0 ? "left" : "right"}>
+                <div>
+                  <span className="text-primary-500 text-xs font-semibold uppercase tracking-widest">
+                    {project.category}
+                  </span>
+                  <h3 className="text-2xl text-navy mt-2 mb-4">{project.title}</h3>
+                  <p className="text-slate-500 leading-relaxed mb-8">{project.description}</p>
+                  <Link href="/travaux">
+                    <Button variant={"primary"}>
+                      Voir toutes les photos
+                      <ArrowRight size={16} className="ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </ScrollReveal>
 
               {/* Image side */}
-              <ProjectImageGallery cover={project.cover} thumbs={project.thumbs} title={project.title} />
+              <ScrollReveal direction={i % 2 === 0 ? "right" : "left"}>
+                <ProjectImageGallery cover={project.cover} thumbs={project.thumbs} title={project.title} />
+              </ScrollReveal>
             </div>
           ))}
         </div>

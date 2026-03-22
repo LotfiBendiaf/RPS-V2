@@ -42,7 +42,7 @@ export default function CookieConsent() {
       aria-live="polite"
       className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6"
     >
-      <div className="mx-auto max-w-4xl rounded-2xl bg-warm-900 text-white shadow-2xl ring-1 ring-white/10 px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-4">
+      <div className="mx-auto max-w-4xl rounded-lg bg-warm-900 text-white shadow-2xl ring-1 ring-white/10 px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-4">
         {/* Icon + text */}
         <div className="flex items-start gap-3 flex-1 min-w-0">
           <span className="text-2xl select-none shrink-0" aria-hidden="true">🍪</span>
