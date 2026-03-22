@@ -1,15 +1,18 @@
 import Link from "next/link";
 import { PROJECT_META, getProjectImages } from "@/lib/projects";
 import Image from "next/image";
+import ProjectImageGallery from "./ProjectImageGallery";
+import { ArrowRight } from "lucide-react";
+import { Button } from "../ui/button";
 
 export default function ProjectsPreviewSection() {
   const projects = PROJECT_META.map((p) => {
     const images = getProjectImages(p.folder);
-    return { ...p, cover: images[0], thumbs: images.slice(1, 5) };
+    return { ...p, cover: images[0], thumbs: images.slice(1, 4) };
   });
 
   return (
-    <section className="relative py-20 px-6 bg-white">
+    <section className="relative py-10 px-6 bg-white">
             <Image src={"/rps-icon-bg.svg"} alt="RPS Logo Background" fill className="object-cover opacity-30 z-0" />
 
       <div className="relative z-1 max-w-7xl mx-auto">
@@ -43,42 +46,17 @@ export default function ProjectsPreviewSection() {
                 <p className="text-slate-500 leading-relaxed mb-8">{project.description}</p>
                 <Link
                   href="/travaux"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors duration-200 text-sm font-medium"
                 >
+                  <Button variant={"primary"}>
+
                   Voir toutes les photos
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
+                  <ArrowRight size={16} className="ml-2" />
+                  </Button>
                 </Link>
               </div>
 
               {/* Image side */}
-              <div>
-                {/* Main image */}
-                <div className="rounded-2xl overflow-hidden aspect-4/3 bg-slate-100">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={project.cover}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Thumbnails */}
-                {project.thumbs.length > 0 && (
-                  <div className="grid grid-cols-4 gap-2 mt-2">
-                    {project.thumbs.map((img, ii) => (
-                      <div
-                        key={ii}
-                        className="rounded-xl overflow-hidden aspect-square bg-slate-100"
-                      >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={img} alt="" className="w-full h-full object-cover" />
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <ProjectImageGallery cover={project.cover} thumbs={project.thumbs} title={project.title} />
             </div>
           ))}
         </div>

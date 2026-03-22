@@ -1,15 +1,14 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import { Phone, MapPin, Mail, Clock, ArrowRight } from "lucide-react";
+import { Phone, MapPin, Mail, Clock } from "lucide-react";
 
 // Leaflet must be loaded client-side only
 const MapEmbed = dynamic(() => import("@/components/LeafletMap"), { ssr: false });
 
 export default function MapSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-12">
@@ -21,9 +20,9 @@ export default function MapSection() {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10 items-stretch">
+        <div className="space-y-4">
           {/* Contact info */}
-          <div className="flex flex-col gap-8 justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-center">
             <div className="flex items-start gap-4">
               <span className="w-11 h-11 rounded-full bg-primary-100 flex items-center justify-center shrink-0">
                 <MapPin size={20} className="text-primary-500" />
@@ -44,7 +43,6 @@ export default function MapSection() {
               <div>
                 <h3 className="font-semibold text-navy mb-1">Téléphone</h3>
                 <div className="text-warm-500 leading-relaxed">
-                  <a href="tel:+33780123295" className="hover:text-primary-500 transition-colors block">+33 780 12 32 95</a>
                   <a href="tel:+33609232499" className="hover:text-primary-500 transition-colors block">+33 609 23 24 99</a>
                   <a href="tel:+33679000244" className="hover:text-primary-500 transition-colors block">+33 679 00 02 44</a>
                 </div>
@@ -74,23 +72,14 @@ export default function MapSection() {
                 <h3 className="font-semibold text-navy mb-1">Horaires</h3>
                 <div className="text-warm-500 leading-relaxed">
                   <p>Lundi – Vendredi : 08h – 18h</p>
-                  <p>Samedi : 09h – 13h</p>
                   <p>Dimanche : Fermé</p>
                 </div>
               </div>
             </div>
-
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded transition-colors w-fit"
-            >
-              Nous contacter
-              <ArrowRight size={16} />
-            </Link>
           </div>
 
           {/* Map */}
-          <div className="rounded-2xl overflow-hidden shadow-lg min-h-[400px]">
+          <div className="rounded-2xl overflow-hidden shadow-lg min-h-100">
             <MapEmbed />
           </div>
         </div>

@@ -30,15 +30,37 @@ const categories = [
     items: [
       "Plâtrerie & cloisons",
       "Faux plafonds",
-      "Électricité",
-      "Plomberie",
+      "Menuiserie intérieure",
+      "Pose de parquet",
+    ],
+  },
+  {
+    id: "electricity",
+    name: "Électricité",
+    items: [
+      "Installation électrique",
+      "Mise aux normes",
+      "Tableau électrique",
+      "Éclairage & domotique",
+      "Prises & interrupteurs",
+    ],
+  },
+  {
+    id: "plomberie",
+    name: "Plomberie",
+    items: [
+      "Installation sanitaire",
+      "Rénovation salle de bain",
+      "Dépannage & réparation",
+      "Chauffage & radiateurs",
+      "Tuyauterie & canalisations",
     ],
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 bg-secondary-50">
+    <section id="services" className="py-10 bg-secondary-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <p className="text-primary-500 text-sm font-semibold uppercase tracking-widest mb-3">
@@ -47,11 +69,13 @@ export default function ServicesSection() {
           <h2 className="text-3xl sm:text-4xl text-navy">Nos domaines d&apos;intervention</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {categories.map((cat) => (
+        <div className="grid grid-cols-1 sm:grid-cols-6 gap-6">
+          {categories.map((cat, idx) => (
             <div
               key={cat.id}
-              className="relative h-96 rounded-2xl overflow-hidden group cursor-pointer shadow-md"
+              className={`relative h-96 rounded-2xl col-span-2 overflow-hidden group cursor-pointer shadow-md sm:col-span-2${
+                idx === 3 ? " sm:col-start-2" : ""
+              }`}
             >
               {/* Background image */}
               <Image

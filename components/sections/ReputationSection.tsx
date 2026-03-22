@@ -1,13 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
+import { Button } from "../ui/button";
 
 export default function ReputationSection() {
   return (
-    <section className="relative py-20 bg-navy">
+    <section className="relative py-10 bg-navy">
             <Image src={"/rps-icon-bg.svg"} alt="RPS Logo Background" fill className="object-cover opacity-10" />
       
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-primary-400 text-sm font-semibold uppercase tracking-widest mb-3">
@@ -25,8 +26,12 @@ export default function ReputationSection() {
             <div>
 
 
-              <Link href="/travaux" className="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 text-white rounded shadow-md hover:bg-primary-600 transition-colors duration-300">
+              <Link href="/travaux">
+              <Button variant={"primary"}>
+
                 Explorez notre savoir-faire
+                <ArrowRight size={16} className="ml-2" />
+              </Button>
               </Link>
               
               <div className="flex items-center gap-2 text-white">
@@ -41,7 +46,7 @@ export default function ReputationSection() {
           </div>
           <div className="relative rounded-2xl overflow-hidden h-100">
             <Image
-              src="/Images/image1.jpg"
+              src="/Images/wallpaper2.png"
               alt="Travaux RPS"
               fill
               className="object-cover"

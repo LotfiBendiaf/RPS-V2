@@ -17,13 +17,13 @@ const checkpoints = [
 
 export default function WhyUsSection() {
   return (
-    <section className="relative py-16">
-      <Image src={"/rps-icon-bg.svg"} alt="RPS Logo Background" fill className="object-cover opacity-30" />
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="relative py-10">
+      <Image src={"/rps-icon-bg.svg"} alt="RPS Logo Background" fill className="object-cover opacity-30 z-0" />
+      <div className="relative z-1 max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative rounded-2xl overflow-hidden h-110">
             <Image
-              src="/Images/image1.jpg"
+              src="/Images/rps-image.jpg"
               alt="Équipe RPS en travaux"
               fill
               className="object-cover"

@@ -1,10 +1,25 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import Icon from "./Icon";
 
 const testimonials = [
+  {
+    name: "Frédérique Digues",
+    role: "",
+    text: "Nous avons fait appel à RPS pour des travaux de peinture : il s'agissait d'enduire un mur en stuc intérieur datant des années 70. Nous avons été entièrement satisfaits du résultat. Les travaux ont été réalisés dans les délais et le rendu est parfait.",
+  },
+  {
+    name: "AbdelWahid Benzerrouk",
+    role: "",
+    text: "Je suis extrêmement satisfait des travaux réalisés. L'équipe a fait preuve de professionnalisme, de ponctualité et de souci du détail tout au long du chantier. La qualité de la peinture et des finitions est impeccable.",
+  },
+  {
+    name: "Sdra Sadou",
+    role: "",
+    text: "Une entreprise très professionnelle, à l'écoute de mes besoins dès le premier contact. Je ne peux que recommander cette entreprise pour les revêtements de sol et la peinture.",
+  },
   {
     name: "Dr Rony Kobeissi",
     role: "Local Guide",
@@ -21,19 +36,24 @@ const testimonials = [
     text: "J'ai eu affaire à RPS et à Damien le conducteur de travaux, tout s'est très bien passé, les délais ont été correctement respectés. C'est un très bon rapport qualité prix, je recommande fortement.",
   },
   {
-    name: "Khalid Haddouch",
-    role: "",
-    text: "Je recommande ! Professionnalisme, ponctualité, qualité et valeur au rendez-vous.",
+    name: "A Vignon",
+    role: "Local Guide",
+    text: "Très professionnel ! Réactif, fiable et un travail soigné !",
   },
   {
     name: "Stéphane Benfares",
-    role: "The New Age Inc",
-    text: "Très sérieux, respectueux, aime le goût du travail bien fait. Très bon rapport qualité prix.",
+    role: "",
+    text: "Très sérieux, respectueux, aime le goût du travail bien fait et toujours de bon conseil. Excellent rapport qualité prix, je recommande vivement !",
   },
   {
     name: "Maryline Robert",
-    role: "",
+    role: "Local Guide",
     text: "Une équipe disponible, ponctuelle et réactive ! Une réalisation au top ! Merci RPS !",
+  },
+  {
+    name: "Khalid Haddouch",
+    role: "Local Guide",
+    text: "Je recommande ! Professionnalisme, ponctualité, qualité et valeur au rendez-vous.",
   },
 ];
 
@@ -61,13 +81,7 @@ export default function TestimonialsSlider() {
               ))}
             </div>
             <div className="flex items-center gap-3">
-              <Image
-                src="/Icons/RPS-Logo.png"
-                alt={t.name}
-                width={36}
-                height={36}
-                className="rounded-full object-contain bg-slate-100 p-0.5 shrink-0"
-              />
+              <Icon />
               <div>
                 <div className="font-semibold text-navy text-sm">{t.name}</div>
                 {t.role && (

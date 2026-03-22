@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Building2, Mail, Home, Star, Banknote, Crown, ArrowRight } from "lucide-react";
+import { Button } from "./ui/button";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -84,7 +85,6 @@ export default function Footer() {
               <div className="flex items-start gap-2.5">
                 <Phone size={14} className="text-amber-500 mt-0.5 shrink-0" />
                 <span>
-                  +33 780 12 32 95<br />
                   +33 609 23 24 99<br />
                   +33 679 00 02 44
                 </span>
@@ -107,10 +107,11 @@ export default function Footer() {
           <Link
             href="/contact"
             aria-label="Nous contacter"
-            className="hidden md:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white text-sm px-5 py-2.5 rounded transition-colors uppercase w-fit"
           >
+            <Button variant={"primary"}>
             Nous contacter
             <ArrowRight size={16} />
+            </Button>
           </Link>
             </div>
           </div>

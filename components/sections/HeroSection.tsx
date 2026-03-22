@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, FileInput, Medal, Star } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Button } from "../ui/button";
 
 const stats = [
   { value: "50+",  label: "Professionnels qualifiés" },
@@ -50,7 +51,7 @@ export default function HeroSection() {
         />
       ))}
 
-      <div className="inset-0 absolute bg-linear-to-r from-black to-black/20"></div>
+      <div className="inset-0 absolute bg-linear-to-br from-black to-transparent"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 w-full h-screen flex items-center">
         <div className="max-w-3xl">
@@ -72,17 +73,21 @@ export default function HeroSection() {
             <Link
               href="/contact"
               aria-label="Faire un devis"
-              className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded transition-colors text-sm uppercase"
+
             >
+              <Button variant={"primary"}>
+
               Faire un devis <FileInput size={16} />
+              </Button>
             </Link>
             <Link
               href="/travaux"
               aria-label="Voir nos travaux"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded border border-white/20 transition-colors backdrop-blur-sm text-sm uppercase"
             >
+              <Button variant={"outline"}>
               
               Voir nos travaux <ArrowRight size={16} />
+              </Button>
             </Link>
           </div>
 
@@ -91,7 +96,7 @@ export default function HeroSection() {
             {stats.map((s) => (
               <div key={s.label}>
                 <div className="text-2xl font-bold text-primary-400">{s.value}</div>
-                <div className="text-warm-400 text-xs mt-0.5">{s.label}</div>
+                <div className="text-white text-xs mt-0.5">{s.label}</div>
               </div>
             ))}
           </div>

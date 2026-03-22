@@ -4,6 +4,7 @@ import Link from "next/link";
 import Logo from "@/components/Logo";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Home, Building2, Users, Phone, Wrench, ArrowRight } from "lucide-react";
+import { Button } from "./ui/button";
 
 const navLinks = [
   { href: "/", label: "Accueil", Icon: Home },
@@ -34,9 +35,9 @@ export default function Header() {
   }, []);
 
   return (
-    <div className={`fixed top-4 left-0 right-0 z-50 px-4 transition-transform duration-300 ${hidden ? "-translate-y-24" : "translate-y-0"}`}>
-    <header className="max-w-7xl mx-auto rounded-3xl bg-white/90 backdrop-blur-md shadow-lg">
-      <div className="mx-auto px-6 h-16 flex items-center justify-between gap-8">
+    <div className={`fixed top-6 left-0 right-0 z-50 transition-transform duration-300 ${hidden ? "-translate-y-24" : "translate-y-0"}`}>
+    <header className="max-w-7xl mx-auto rounded-3xl bg-white backdrop-blur-md shadow-lg">
+      <div className="mx-auto px-8 h-16 flex items-center justify-between gap-8">
         {/* Logo */}
         <Logo />
 
@@ -60,10 +61,11 @@ export default function Header() {
           <Link
             href="/contact"
             aria-label="Nous contacter"
-            className="hidden md:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white text-sm px-5 py-2.5 rounded transition-colors uppercase"
           >
+            <Button variant={"primary"}>
             Nous contacter
-            <ArrowRight size={16} />
+            <ArrowRight size={16} className="ml-2" />
+            </Button>
           </Link>
           <button
             type="button"
