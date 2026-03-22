@@ -26,6 +26,22 @@ export const PROJECT_META: ProjectMeta[] = [
     description:
       "Travaux de rénovation intérieure complets, incluant peinture, plâtrerie et finitions.",
   },
+  {
+    id: 4,
+    folder: "project4",
+    title: "Construction UFR STAPS – Locaux d'enseignement mutualisés",
+    category: "Chantier universitaire",
+    description:
+      "Construction d'un bâtiment destiné à accueillir l'UFR STAPS et des locaux d'enseignement mutualisés.",
+  },
+  {
+    id: 3,
+    folder: "project3",
+    title: "Extension – Restructuration du Pôle Agro-Sciences URCA",
+    category: "Chantier universitaire",
+    description:
+      "Extension – Restructuration du Pôle Agro-Sciences, Environnement, Biotechnologies et Bioéconomie, Sciences du Numérique de l'Université de Reims Champagne-Ardenne (URCA) à Reims.",
+  },
 ];
 
 export function getProjectImages(folder: string): string[] {
