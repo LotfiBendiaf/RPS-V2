@@ -25,8 +25,8 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    default: "RPS Reims",
-    template: "%s | RPS Reims",
+    default: "RPS",
+    template: "%s | RPS",
   },
   description:
     "Située en coeur de Reims, RPS Entreprise met son professionnalisme et son dynamisme à votre service pour la prise en charge de vos travaux de rénovation immobilière pour les particuliers et les professionnels",

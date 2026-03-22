@@ -24,8 +24,8 @@ export default function PartenairesSection() {
 
       {/* Gradient fade edges */}
       <div className="relative">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10 bg-gradient-to-r from-warm-100 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10 bg-gradient-to-l from-warm-100 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10 bg-linear-to-r from-warm-100 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10 bg-linear-to-l from-warm-100 to-transparent" />
 
         <div className="logos-track">
           {track.map((logo, i) => (
@@ -38,7 +38,7 @@ export default function PartenairesSection() {
                 alt={logo.alt}
                 width={120}
                 height={60}
-                className="h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                className="h-16 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           ))}
