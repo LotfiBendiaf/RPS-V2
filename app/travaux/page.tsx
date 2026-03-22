@@ -29,7 +29,7 @@ export default function TravauxPage() {
       {/* Projects grid */}
       <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl text-navy mb-2">Nos réalisations</h2>
+          <h2 className="text-2xl text-navy mb-2">Nos réalisations récentes</h2>
           <p className="text-slate-500 text-sm mb-8">
             Cliquez sur un projet pour parcourir toutes les photos.
           </p>

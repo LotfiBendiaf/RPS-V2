@@ -6,36 +6,44 @@ export const metadata: Metadata = { title: "FAQ" };
 
 const faqs = [
   {
-    q: "Quels services votre entreprise de rénovation offre-t-elle ?",
-    r: "Notre entreprise de rénovation offre un large éventail de services, notamment la rénovation de cuisines et de salles de bains, la pose de revêtements de sol, la peinture, les travaux d'électricité et de plomberie, etc.",
+    q: "Quels sont les domaines d'intervention de RPS ?",
+    r: "RPS intervient dans trois grands domaines : la peinture industrielle (décapage, anticorrosion, peintures anti-graffitis), les revêtements spéciaux (étanchéité, résines de sol, ignifuge, composites céramiques) et la finition & aménagement du bâtiment (ravalement de façade, ITE, peintures murales, revêtements de sols souples et durs, plâtrerie, faux plafonds).",
   },
   {
-    q: "Comment puis-je obtenir un devis pour mon projet de rénovation ?",
-    r: "Contactez-nous sur notre site Web ou appelez-nous directement pour planifier une consultation. Nous évaluerons vos besoins et vous fournirons un devis détaillé pour votre projet.",
+    q: "Dans quelles zones géographiques intervenez-vous ?",
+    r: "RPS est implanté dans le Grand Est et répond aux besoins locaux depuis Reims. Depuis 2023, notre rayon d'intervention s'est élargi à l'échelle nationale pour répondre à des projets d'envergure partout en France.",
   },
   {
-    q: "Travaillez-vous avec un architecte ou un designer ?",
-    r: "Oui, nous travaillons avec des architectes et des designers afin de garantir que votre projet de rénovation soit réalisé conformément à vos spécifications.",
+    q: "Comment obtenir un devis pour mon projet ?",
+    r: "Contactez-nous via notre formulaire en ligne ou appelez-nous directement au 06 09 23 24 99. Nous évaluerons vos besoins et vous fournirons un devis détaillé et sans engagement.",
   },
   {
-    q: "Combien de temps prend un projet de rénovation typique ?",
-    r: "Le calendrier d'un projet de rénovation dépend de la taille et de la complexité du projet. Nous vous fournirons un calendrier détaillé de votre projet au cours du processus de consultation.",
+    q: "RPS travaille-t-il pour les bailleurs sociaux et les marchés publics ?",
+    r: "Oui. Depuis 2020 RPS est actif dans la rénovation de logements de bailleurs sociaux et est lauréat de plusieurs appels d'offres publics couvrant logements, bâtiments ERP, industrie et parkings.",
   },
   {
-    q: "Combien coûte un projet de rénovation typique ?",
-    r: "Le coût d'un projet de rénovation varie en fonction de l'ampleur des travaux, des matériaux utilisés et d'autres facteurs. Nous vous fournirons un devis détaillé au cours du processus de consultation.",
+    q: "Quelles qualifications et certifications RPS possède-t-il ?",
+    r: "RPS est qualifié QUALIBAT et reconnu Grenelle de l'Environnement, avec des qualifications spécifiques en peinture & ravalement, revêtements PVC, textiles collés, plaques de plâtre et isolation thermique/acoustique. Nos compagnons disposent également de la formation amiante SS4.",
   },
   {
-    q: "Vos ouvriers sont-ils assurés et autorisés ?",
-    r: "Oui, tous nos travailleurs sont entièrement assurés et autorisés à effectuer des travaux de rénovation.",
+    q: "Vos équipes sont-elles assurées ?",
+    r: "Oui, l'ensemble de nos collaborateurs (plus de 50 professionnels pluridisciplinaires) sont assurés et habilités pour les travaux qu'ils réalisent. Une démarche Sécurité & Environnement rigoureuse est déployée sur tous nos chantiers.",
   },
   {
-    q: "Offrez-vous des options de financement pour vos services ?",
-    r: "Oui, nous offrons des options de financement à nos clients pour les aider à rendre leurs projets de rénovation plus abordables.",
+    q: "RPS utilise-t-il des produits respectueux de l'environnement ?",
+    r: "Oui. Plus de 80 % de nos peintures sont en phase aqueuse, avec des produits certifiés NF Environnement ou Ecolabel réduisant les émissions de COV. Nous proposons également des peintures dépolluantes qui détruisent jusqu'à 80 % des polluants intérieurs dès 24 h.",
   },
   {
-    q: "Offrez-vous une garantie pour vos services ?",
-    r: "Oui, nous offrons une garantie pour tous nos services afin d'assurer votre entière satisfaction.",
+    q: "Combien de chantiers RPS réalise-t-il par an ?",
+    r: "Nos équipes sont en charge de plus de 100 chantiers par an, pour plus de 150 clients réguliers, en dehors des particuliers qui complètent notre activité en constante augmentation.",
+  },
+  {
+    q: "RPS dispose-t-il d'un chargé d'affaires qualifié ?",
+    r: "Oui. Notre chargé d'affaires est diplômé architecte, notre conducteur de travaux est ingénieur CESI, et notre assistant conducteur de travaux est titulaire d'un Master Génie Civil, garantissant un suivi technique rigoureux de chaque projet.",
+  },
+  {
+    q: "Comment RPS s'engage-t-il dans la formation et l'insertion professionnelle ?",
+    r: "RPS accueille des apprentis, des stagiaires (dont des jeunes issus du Service Militaire Volontaire), recourt à l'intérim et collabore avec des acteurs de l'économie sociale et solidaire. Notre politique de formation vise le développement et le maintien des compétences de tous nos salariés.",
   },
 ];
 

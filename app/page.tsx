@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/sections/HeroSection";
+import PartenairesSection from "@/components/sections/PartenairesSection";
 import WhyUsSection from "@/components/sections/WhyUsSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import ProjectsPreviewSection from "@/components/sections/ProjectsPreviewSection";
@@ -14,6 +15,7 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection />
+      <PartenairesSection />
       <WhyUsSection />
       <ServicesSection />
       <ProjectsPreviewSection />

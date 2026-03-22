@@ -314,3 +314,19 @@
   pointer-events: none;
   box-shadow: 0 10px 30px rgba(13, 27, 62, 0.2);
 }
+
+/* ── Partenaires infinite scroll ── */
+@keyframes scroll-logos {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.logos-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-logos 28s linear infinite;
+}
+
+.logos-track:hover {
+  animation-play-state: paused;
+}
