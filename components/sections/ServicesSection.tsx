@@ -85,7 +85,7 @@ export default function ServicesSection() {
                 key={cat.id}
                 direction="up"
                 delay={idx * 100}
-                className={`col-span-2${idx === 3 ? " sm:col-start-2" : ""}`}
+                className={`col-span-2 ${idx === 3 ? " sm:col-start-2" : ""}`}
               >
               <div
                 onClick={() => setOpenId(isOpen ? null : cat.id)}
