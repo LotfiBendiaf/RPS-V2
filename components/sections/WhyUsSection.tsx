@@ -44,7 +44,8 @@ export default function WhyUsSection() {
               Dans notre entreprise de rénovation, nous nous engageons à fournir des
               services de haute qualité à un prix abordable. Avec des années d&apos;expérience
               et une équipe de professionnels qualifiés, nous avons l&apos;expertise nécessaire
-              pour mener à bien tout projet de rénovation, petit ou grand.
+              pour mener à bien tout projet de rénovation, petit ou grand, pour des
+              <span className="font-bold uppercase text-primary-700"> professionnels</span> ou des <span className="font-bold uppercase text-primary-700">particuliers</span>.
             </p>
             <div className="flex justify-between">
               <div className="flex flex-col gap-3 mb-10">

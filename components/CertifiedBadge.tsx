@@ -3,7 +3,7 @@ import { ShieldCheck } from "lucide-react";
 export default function CertifiedBadge() {
   return (
     <div className="hidden lg:block animate-bounce-slow">
-      <div className="relative bg-white/10 backdrop-blur-md border rounded-2xl px-5 py-4 text-white flex items-center gap-3 shadow-xl">
+      <div className="relative bg-white backdrop-blur-md border rounded-2xl px-5 py-4 text-white flex items-center gap-3 shadow-xl">
         <div className="w-10 h-10 rounded-full bg-primary-500 flex items-center justify-center shrink-0 ring-2 ring-primary-300/40">
           <ShieldCheck size={20} />
         </div>

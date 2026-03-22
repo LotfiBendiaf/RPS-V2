@@ -59,7 +59,7 @@ export default function HeroSection() {
         <div className="max-w-3xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary-500/20 border border-primary-400/30 text-primary-300 text-xs font-medium px-3 py-1.5 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary-400" />
+            <span className="w-1.5 h-1.5 animate-pulse rounded-full bg-primary-400" />
             Entreprise de rénovation Tous Corps d&apos;État (TCE) basée à Reims
           </div>
 
@@ -68,7 +68,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-primary-50 text-base sm:text-lg leading-relaxed mb-10 max-w-xl">
-            Située au cœur de Reims, <span className="font-semibold text-primary-300">RPS</span> met son expertise et son dynamisme au service de tous vos projets de rénovation.
+            Située au cœur de Reims, <span className="font-semibold text-primary-500">RPS</span> met son expertise et son dynamisme au service de tous vos projets de rénovation, pour des <span className="font-bold uppercase text-primary-500">professionnels</span> ou des <span className="font-bold uppercase text-primary-500">particuliers</span>.
           </p>
 
           <div className="flex flex-wrap gap-4 mb-14">
@@ -113,7 +113,7 @@ export default function HeroSection() {
                 <Medal size={17} />
               </div>
               <div>
-                <div className="font-semibold text-sm">Évaluation clients</div>
+                <div className="font-semibold text-sm upp">Évaluation clients</div>
                 <div className="flex gap-0.5 mt-0.5">
                   {[1, 2, 3, 4, 5].map((s) => (
                     <Star key={s} size={11} fill="#F77F00" color="#F77F00" />
@@ -121,7 +121,7 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-            <p className="text-warm-300 text-xs">5/5 étoiles · +100 avis vérifiés</p>
+            <p className="text-white text-xs">5/5 étoiles · +100 avis vérifiés</p>
           </div>
         </div>
       </div>
