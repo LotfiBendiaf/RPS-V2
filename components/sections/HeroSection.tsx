@@ -17,8 +17,8 @@ const slides = [
   { src: "/Images/wallpaper3.jpg", alt: "Rénovation intérieure" },
   { src: "/Images/painting.jpg",   alt: "Peinture" },
   { src: "/Images/carpenter.jpg",  alt: "Menuiserie" },
-  { src: "/Images/electric.jpg",   alt: "Électricité" },
-  { src: "/Images/plumber.jpg",    alt: "Plomberie" },
+  { src: "/Images/electricity.jpg",   alt: "Électricité" },
+  { src: "/Images/plomberie.jpg",    alt: "Plomberie" },
   { src: "/Images/isolation.jpg",  alt: "Isolation" },
   { src: "/Images/ext.jpg",        alt: "Façade extérieure" },
   { src: "/Images/soil.jpg",       alt: "Sols" },
@@ -53,7 +53,7 @@ export default function HeroSection() {
 
       <div className="inset-0 absolute bg-linear-to-br from-black to-transparent"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 w-full h-screen flex items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 w-full h-[110vh] md:h-screen flex items-center">
         <div className="max-w-3xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary-500/20 border border-primary-400/30 text-primary-300 text-xs font-medium px-3 py-1.5 rounded-full mb-6">
@@ -92,7 +92,7 @@ export default function HeroSection() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/15 max-w-sm">
+          <div className="grid grid-cols-3 gap-6 pt-8 border-t border-primary-100 max-w-sm">
             {stats.map((s) => (
               <div key={s.label}>
                 <div className="text-2xl font-bold text-primary-400">{s.value}</div>

@@ -6,15 +6,15 @@ export const metadata: Metadata = { title: "Contact" };
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-navy pt-8">
-      <div className="max-w-6xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+    <main className="min-h-screen bg-navy pt-8 overflow-x-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Left: info */}
           <div className="text-white">
             <p className="text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
               Contactez-nous
             </p>
-            <h1 className="text-4xl sm:text-5xl mb-5">
+            <h1 className="text-2xl sm:text-5xl mb-5">
               Parlons de votre projet
             </h1>
             <p className="text-slate-400 leading-relaxed mb-10 text-sm">

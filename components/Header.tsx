@@ -61,6 +61,7 @@ export default function Header() {
           <Link
             href="/contact"
             aria-label="Nous contacter"
+            className="hidden md:inline-flex"
           >
             <Button variant={"primary"}>
             Nous contacter
@@ -84,7 +85,7 @@ export default function Header() {
       {menuOpen && (
         <div
           id="mobile-navigation"
-          className="md:hidden bg-white border-t border-slate-100 px-6 py-4 flex flex-col gap-1"
+          className="md:hidden bg-white border-t border-slate-100 rounded-2xl px-6 py-4 flex flex-col gap-1"
         >
           {mobileLinks.map(({ href, label, Icon }) => (
             <Link
@@ -101,10 +102,12 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors w-full uppercase"
+              aria-label="Nous contacter"
             >
+              <Button variant={"primary"}>
               Nous contacter
               <Phone size={16} />
+              </Button>
             </Link>
           </div>
         </div>

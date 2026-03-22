@@ -8,13 +8,13 @@ export default function ReputationSection() {
     <section className="relative py-10 bg-navy">
             <Image src={"/rps-icon-bg.svg"} alt="RPS Logo Background" fill className="object-cover opacity-10" />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-2 md:px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-primary-400 text-sm font-semibold uppercase tracking-widest mb-3">
               Notre réputation
             </p>
-            <h2 className="text-3xl sm:text-4xl text-white mb-6">
+            <h2 className="text-2xl sm:text-4xl text-white mb-6">
               Une entreprise connue et recommandée
             </h2>
             <p className="text-warm-400 leading-relaxed mb-8">

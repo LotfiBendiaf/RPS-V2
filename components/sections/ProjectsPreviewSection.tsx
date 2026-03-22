@@ -21,7 +21,7 @@ export default function ProjectsPreviewSection() {
           <p className="text-primary-500 text-xs font-semibold uppercase tracking-widest mb-3">
             Portfolio
           </p>
-          <h2 className="text-3xl sm:text-4xl text-navy mb-4">Nos réalisations</h2>
+          <h2 className="text-2xl sm:text-4xl text-navy mb-4">Nos réalisations</h2>
           <p className="text-slate-500 max-w-xl leading-relaxed">
             Des chantiers menés avec soin, du premier coup de pinceau jusqu&apos;aux
             finitions — voici quelques exemples de notre travail.

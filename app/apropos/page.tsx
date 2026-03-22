@@ -11,7 +11,7 @@ export default function AproposPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-72 sm:h-96 overflow-hidden">
+      <section className="relative sm:h-96 overflow-hidden pt-32 pb-10">
         <Image
           src="/Images/wallpaper2.png"
           alt="RPS Reims"
@@ -32,7 +32,7 @@ export default function AproposPage() {
       </section>
 
       {/* Content */}
-      <section className="py-20 px-6">
+      <section className="py-10 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Text */}

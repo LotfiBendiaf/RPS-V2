@@ -2,6 +2,8 @@
 
 import { useActionState } from "react";
 import { sendContact, type ContactState } from "@/lib/actions";
+import { Button } from "./ui/button";
+import { ArrowRight } from "lucide-react";
 
 const initialState: ContactState = {};
 
@@ -11,7 +13,7 @@ export default function ContactForm() {
   return (
     <form
       action={formAction}
-      className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md"
+      className="w-full bg-white rounded-2xl shadow-xl p-5 sm:p-8"
     >
       <h2 className="text-2xl text-navy mb-1">Nous contacter</h2>
       <p className="text-slate-500 text-sm mb-7">
@@ -39,7 +41,7 @@ export default function ContactForm() {
             required
             type="text"
             name="nom"
-            className="border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition"
+            className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition"
           />
         </div>
 
@@ -53,7 +55,7 @@ export default function ContactForm() {
             type="text"
             name="sujet"
             placeholder="Exemple : Faire un devis"
-            className="border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition"
+            className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition"
           />
         </div>
 
@@ -66,7 +68,7 @@ export default function ContactForm() {
             required
             type="email"
             name="email"
-            className="border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition"
+            className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition"
           />
         </div>
 
@@ -79,17 +81,18 @@ export default function ContactForm() {
             required
             name="message"
             rows={5}
-            className="border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition resize-none"
+            className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition resize-none"
           />
         </div>
 
-        <button
+        <Button
           type="submit"
           disabled={isPending}
-          className="bg-amber-500 hover:bg-amber-600 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+variant={"primary"}
         >
           {isPending ? "Envoi en cours…" : "Envoyer le message"}
-        </button>
+          <ArrowRight size={16} className="ml-2" />
+        </Button>
       </div>
     </form>
   );

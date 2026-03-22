@@ -22,7 +22,7 @@ export default function MapSection() {
 
         <div className="space-y-4">
           {/* Contact info */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
             <div className="flex items-start gap-4">
               <span className="w-11 h-11 rounded-full bg-primary-100 flex items-center justify-center shrink-0">
                 <MapPin size={20} className="text-primary-500" />
