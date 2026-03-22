@@ -64,6 +64,7 @@ const categories = [
 
 export default function ServicesSection() {
   const [openId, setOpenId] = useState<string | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
     <section id="services" className="py-10 bg-secondary-50">
@@ -79,7 +80,7 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-6 gap-6">
           {categories.map((cat, idx) => {
-            const isOpen = openId === cat.id;
+            const isActive = openId === cat.id || hoveredId === cat.id;
             return (
               <ScrollReveal
                 key={cat.id}
@@ -88,33 +89,35 @@ export default function ServicesSection() {
                 className={`col-span-2 ${idx === 3 ? " sm:col-start-2" : ""}`}
               >
               <div
-                onClick={() => setOpenId(isOpen ? null : cat.id)}
-                className="relative h-96 rounded-2xl overflow-hidden group cursor-pointer shadow-md w-full"
+                onClick={() => setOpenId(openId === cat.id ? null : cat.id)}
+                onMouseEnter={() => setHoveredId(cat.id)}
+                onMouseLeave={() => setHoveredId(null)}
+                className="relative h-96 rounded-2xl overflow-hidden cursor-pointer shadow-md w-full"
               >
                 {/* Background image */}
                 <Image
                   src={`/Images/${cat.id}.jpg`}
                   alt={cat.name}
                   fill
-                  className={`object-cover transition-transform duration-500 group-hover:scale-105${isOpen ? " scale-105" : ""}`}
+                  className={`object-cover transition-transform duration-500${isActive ? " scale-105" : ""}`}
                 />
 
                 {/* Default overlay — darkens bottom */}
-                <div className={`absolute inset-0 bg-linear-to-t from-black/85 via-black/25 to-transparent transition-opacity duration-400 group-hover:opacity-0${isOpen ? " opacity-0" : ""}`} />
+                <div className={`absolute inset-0 bg-linear-to-t from-black/85 via-black/25 to-transparent transition-opacity duration-400${isActive ? " opacity-0" : ""}`} />
 
-                {/* Hover/open overlay — full dark cover */}
-                <div className={`absolute inset-0 bg-black/70 transition-opacity duration-400 group-hover:opacity-100${isOpen ? " opacity-100" : " opacity-0"}`} />
+                {/* Active overlay — full dark cover */}
+                <div className={`absolute inset-0 bg-black/70 transition-opacity duration-400${isActive ? " opacity-100" : " opacity-0"}`} />
 
-                {/* Category name — slides up on hover/open */}
-                <div className={`absolute bottom-0 left-0 right-0 p-6 transition-transform duration-400 group-hover:-translate-y-4${isOpen ? " -translate-y-4" : " translate-y-0"}`}>
+                {/* Category name — slides up on active */}
+                <div className={`absolute bottom-0 left-0 right-0 p-6 transition-transform duration-400${isActive ? " -translate-y-4" : ""}`}>
                   <h3 className="text-white font-bold text-2xl tracking-wide drop-shadow">
                     {cat.name}
                   </h3>
-                  <span className={`block mt-1 h-0.5 bg-primary-400 transition-all duration-300 group-hover:w-0${isOpen ? " w-0" : " w-8"}`} />
+                  <span className={`block mt-1 h-0.5 bg-primary-400 transition-all duration-300${isActive ? " w-0" : " w-8"}`} />
                 </div>
 
-                {/* Services list — revealed on hover/open */}
-                <div className={`absolute inset-0 flex flex-col justify-center px-6 transition-opacity duration-400 delay-100 group-hover:opacity-100${isOpen ? " opacity-100" : " opacity-0"}`}>
+                {/* Services list — revealed on active */}
+                <div className={`absolute inset-0 flex flex-col justify-center px-6 transition-opacity duration-400 delay-100${isActive ? " opacity-100" : " opacity-0"}`}>
                   <ul className="flex flex-col gap-3">
                     {cat.items.map((item, i) => (
                       <li
