@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-montserrat), Montserrat, sans-serif;
   --font-mono: var(--font-geist-mono);
   --font-heading: "Syncopate", sans-serif;
 
@@ -216,7 +216,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-poppins), Poppins, sans-serif;
+    font-family: var(--font-montserrat), Montserrat, sans-serif;
     overflow-x: hidden;
     animation: fadeIn 0.5s ease-out;
   }

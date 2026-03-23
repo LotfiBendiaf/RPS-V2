@@ -25,8 +25,8 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    default: "RPS",
-    template: "%s | RPS",
+    default: "RPS Reims",
+    template: "%s | RPS Reims",
   },
   description:
     "Située en coeur de Reims, RPS Entreprise met son professionnalisme et son dynamisme à votre service pour la prise en charge de vos travaux de rénovation immobilière pour les particuliers et les professionnels",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "RPS",
     type: "website",
     url: "https://rps-reims.com/",
-    title: "RPS : Renovation Peinture Service, Entreprise de bâtiment spécialisée dans la construction et la renovation",
+    title: "RPS : Renovation Peinture Service, Entreprise de rénovation Tous Corps d'État (TCE) basée à Reims",
     description:
       "Située en coeur de Reims, RPS Entreprise met son professionnalisme et son dynamisme à votre service pour la prise en charge de vos travaux de rénovation immobilière pour les particuliers et les professionnels",
     images: [{ url: "https://rps-reims.com/Images/og_image.png" }],

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X, Home, Building2, Users, Phone, Wrench, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 
@@ -20,6 +21,7 @@ const mobileLinks = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastY = useRef(0);
@@ -43,17 +45,20 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav aria-label="Navigation principale" className="hidden md:flex items-center gap-7">
-          {navLinks.map(({ href, label, Icon }) => (
+          {navLinks.map(({ href, label, Icon }) => {
+            const isActive = href === "/" ? pathname === "/" : pathname.startsWith(href.split("#")[0]) && href.split("#")[0] !== "/";
+            return (
             <Link
               key={href}
               href={href}
               aria-label={label}
-              className="flex items-center gap-1.5 text-sm text-slate-700 hover:text-amber-600 transition-colors"
+              className={`flex items-center gap-1.5 text-sm transition-colors hover:text-amber-600 ${isActive ? "font-semibold text-primary-700" : "text-slate-700"}`}
             >
               <Icon size={15} className="text-amber-500" />
               {label}
             </Link>
-          ))}
+            );
+          })}
         </nav>
 
         {/* CTA + burger */}
