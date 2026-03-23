@@ -52,9 +52,9 @@ export default function Header() {
               key={href}
               href={href}
               aria-label={label}
-              className={`flex items-center gap-1.5 text-sm transition-colors hover:text-amber-600 ${isActive ? "font-semibold text-primary-700" : "text-slate-700"}`}
+              className={`flex items-center gap-1.5 text-sm transition-colors hover:text-amber-600 ${isActive && "font-semibold text-primary-700"}`}
             >
-              <Icon size={15} className="text-amber-500" />
+              <Icon size={15} className="text-primary-300" />
               {label}
             </Link>
             );
