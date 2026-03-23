@@ -14,6 +14,8 @@ const checkpoints = [
   "Équipe certifiée et assurée",
   "Respect des délais et du budget",
   "Satisfaction client garantie",
+  "Service après-vente réactif",
+  "Garantie décennale sur tous les travaux",
 ];
 
 export default function WhyUsSection() {

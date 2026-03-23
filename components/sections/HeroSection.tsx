@@ -67,7 +67,7 @@ export default function HeroSection() {
             DONNEZ UNE NOUVELLE VIE À VOS ESPACES AVEC NOS EXPERTS EN RÉNOVATION
           </h1>
 
-          <p className="text-primary-50 text-base sm:text-lg leading-relaxed mb-10 max-w-xl">
+          <p className="text-primary-50 sm:text-lg mb-10 max-w-xl">
             Située au cœur de Reims, <span className="font-semibold text-primary-500">RPS</span> met son expertise et son dynamisme au service de tous vos projets de rénovation, pour des <span className="font-bold uppercase text-primary-500">professionnels</span> ou des <span className="font-bold uppercase text-primary-500">particuliers</span>.
           </p>
 
