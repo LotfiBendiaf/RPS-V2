@@ -2,6 +2,7 @@
 
 import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
+import { Cookie } from "lucide-react";
 
 function subscribe(cb: () => void) {
   window.addEventListener("storage", cb);
@@ -42,17 +43,17 @@ export default function CookieConsent() {
       aria-live="polite"
       className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6"
     >
-      <div className="mx-auto max-w-4xl rounded-lg bg-warm-900 text-white shadow-2xl ring-1 ring-white/10 px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-4">
+      <div className="mx-auto max-w-4xl rounded-lg bg-white text-gray-800 shadow-2xl ring-1 ring-gray-200 px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-4">
         {/* Icon + text */}
         <div className="flex items-start gap-3 flex-1 min-w-0">
-          <span className="text-2xl select-none shrink-0" aria-hidden="true">🍪</span>
-          <p className="text-sm leading-relaxed text-warm-100">
+          <Cookie className="w-6 h-6 text-primary-500 shrink-0 mt-0.5" aria-hidden="true" />
+          <p className="text-sm leading-relaxed text-gray-600">
             Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser notre trafic.
-            En cliquant sur <strong className="text-white">«&nbsp;Accepter&nbsp;»</strong>, vous consentez à leur
+            En cliquant sur <strong className="text-gray-900">«&nbsp;Accepter&nbsp;»</strong>, vous consentez à leur
             utilisation.{" "}
             <Link
               href="/conditions-regles"
-              className="underline underline-offset-2 text-primary-300 hover:text-primary-200 transition-colors"
+              className="underline underline-offset-2 text-primary-600 hover:text-primary-500 transition-colors"
             >
               En savoir plus
             </Link>
@@ -63,7 +64,7 @@ export default function CookieConsent() {
         <div className="flex items-center gap-3 shrink-0">
           <button
             onClick={decline}
-            className="rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-warm-200 hover:bg-white/10 transition-colors cursor-pointer"
+            className="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer"
           >
             Refuser
           </button>
