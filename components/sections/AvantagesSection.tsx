@@ -10,7 +10,7 @@ export default function AvantagesSection() {
           <ScrollReveal direction="left">
             <div className="relative rounded-2xl overflow-hidden h-105">
               <Image
-                src="/Images/wallpaper3.jpg"
+                src="/Images/wallpaper4.jpg"
                 alt="RPS avantages"
                 fill
                 className="object-cover"
